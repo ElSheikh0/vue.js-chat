@@ -1,0 +1,25 @@
+## welcome to my realtime chat 
+# I am mohammed Elsheikh
+# Languages used and technologies
+-HTML 
+-CSS 
+-JAVASCRIBT 
+-VUE.JS 
+-socket.io 
+-node.js
+-express 
+# how to operate
+-install node.js in your pc
+-open terminal in your IDE 
+install npm and run index.js 
+
+# Open Chat
+Go to browser on "http://127.0.0.1:3030"
+
+I wish you a good time 🖤
+
+
+### Note: that you can add the css file to index.HTML  and remove /* from {app.get('/', function(request, response) {
+response.sendFile(__dirname + '/css.css');});} in index.js file or You can use it as is
+
+###Note: All pictures used from the Internet can be uploaded, but you have to add them to the server

@@ -1,0 +1,752 @@
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+
+<!DOCTYPE html>
+<html class=''>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name="robots" content="noindex">
+    <link rel="shortcut icon" type="image/x-icon" href="//production-assets.codepen.io/assets/favicon/favicon-8ea04875e70c4b0bb41da869e81236e54394d63638a1ef12fa558a4a835f1164.ico" />
+    <link rel="mask-icon" type="" href="//production-assets.codepen.io/assets/favicon/logo-pin-f2d2b6d2c61838f7e76325261b7195c27224080bc099486ddd6dccb469b8e8e6.svg" color="#111" />
+    <link rel="canonical" href="https://codepen.io/michellelpepe/pen/GoQyoJ?depth=everything&order=popularity&page=84&q=pack&show_forks=false" />
+    <link href='https://fonts.googleapis.com/css?family=Nunito:400,300,700' rel='stylesheet' type='text/css'>
+
+    <style class="cp-pen-styles">
+        /*start public*/
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Nunito', sans-serif;
+        }
+        /*end public*/
+        /*start body and dark mode*/
+        
+        html,
+        body {
+            background-image: url(https://image.freepik.com/free-photo/concrete-wall_1154-642.jpg);
+            width: 100%;
+            height: 237%;
+            background-size: cover;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            border: ridge;
+        }
+        
+         :root .dark {
+            background-image: url(https://image.freepik.com/free-photo/old-black-background-grunge-texture-dark-wallpaper-blackboard-chalkboard-room-wall_1258-28312.jpg);
+            width: 100%;
+            height: 237%;
+            background-size: cover;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+            border: #222;
+        }
+        
+         :root .dark .chatbox {
+            background: #232323;
+        }
+        
+         :root .dark .chatbox__messages {
+            background-image: url(https://image.freepik.com/free-photo/black-brick-wall-textured-background_53876-63572.jpg);
+            background-size: cover;
+        }
+        
+         :root .dark .chatbox__messages:nth-of-type(even) .chatbox__messages__user-message--ind-message {
+            background-color: rgb(122 118 118 / 32%);
+        }
+        
+         :root .dark .chatbox__user-list {
+            background: rgba(46, 28, 28, 0.2);
+        }
+        
+         :root .dark .button3 {
+            background-color: rgba(126, 124, 124, 0.596);
+        }
+        
+         :root .dark .button3:hover {
+            background-color: rgb(255, 255, 255);
+        }
+        
+        .card {
+            background: var(--background-light);
+        }
+        /* end body and dark mode*/
+        /*start big div*/
+        
+        #appchat {
+            margin-top: -720px;
+        }
+        
+        .container {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            height: 235vh;
+            width: 100vw;
+        }
+        
+        .container h1 {
+            margin: 0.5em auto;
+            color: #FFF;
+            text-align: center;
+            margin-right: 500px;
+        }
+        /*end big div*/
+        /*start chat box*/
+        
+        .chatbox {
+            background: rgb(255 255 255 / 10%);
+            width: 760px;
+            height: 55%;
+            border-radius: 1.2em;
+            position: relative;
+            box-shadow: 1px 1px 12px rgb(0 0 0 / 10%);
+        }
+        
+        .chatbox__messages:nth-of-type(odd) .chatbox__messages__user-message--ind-message {
+            float: right;
+        }
+        
+        .chatbox__messages:nth-of-type(odd) .chatbox__messages__user-message--ind-message:after {
+            content: '';
+            position: absolute;
+            margin: -1.5em -17.06em;
+            width: 0;
+            height: 0;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            border-right: 10px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .chatbox__messages:nth-of-type(even) .chatbox__messages__user-message--ind-message {
+            float: left;
+            text-align: -webkit-right;
+            margin-block-end: -16px;
+            background-color: rgb(0 0 0 / 50%);
+        }
+        
+        .chatbox__messages__user-message {
+            width: 708px;
+            height: 85px;
+        }
+        
+        .chatbox__messages__user-message--ind-message {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 1em 0;
+            height: auto;
+            width: inherit;
+            border-radius: 20px;
+            margin: 2em 1em;
+            overflow: auto;
+            border-left: outset;
+        }
+        
+        .chatbox__messages__user-message--ind-message>p.name {
+            color: #FFF;
+            font-size: 1.2em;
+            font-family: sans-serif;
+            font-weight: bolder;
+        }
+        
+        .chatbox__messages__user-message--ind-message>p.message {
+            color: #FFF;
+            font-size: 1.5em;
+            margin: auto;
+            margin-left: 20px;
+            width: 620px;
+        }
+        
+        .chatbox__user-list {
+            background: rgb(168 168 168);
+            width: 25%;
+            height: 50%;
+            float: right;
+            border-top-right-radius: 0.2em;
+            border-bottom-right-radius: 0.2em;
+        }
+        
+        .chatbox__user-list h1 {
+            background: rgba(255, 255, 255, 0.05);
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.5em;
+            padding: 1em;
+            margin: 0;
+            font-weight: 300;
+            text-align: center;
+            margin-bottom: 25px;
+            border-bottom: solid 3px;
+        }
+        
+        .chatbox__user,
+        .chatbox__user--active,
+        .chatbox__user--busy,
+        .chatbox__user--away {
+            width: 0.5em;
+            height: 0.5em;
+            border-radius: 100%;
+            margin: 1em 0.7em;
+            margin-bottom: 28px;
+        }
+        
+        .chatbox__user--active {
+            background: rgba(23, 190, 187, 0.8);
+        }
+        
+        .chatbox__user--busy {
+            background: rgba(252, 100, 113, 0.8);
+        }
+        
+        .chatbox p {
+            float: left;
+            text-align: left;
+            margin: -0.25em 2em;
+            font-size: 1.2em;
+            font-weight: 300;
+            color: #FFF;
+            width: 200px;
+        }
+        
+        .chatbox form {
+            background: #222;
+        }
+        
+        .chatbox form input {
+            background: rgb(255 255 255 / 15%);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            border: none;
+            padding: 15px;
+            outline: none;
+            color: rgb(255 255 255);
+            font-weight: 400;
+            border-style: inset;
+            font-size: 23px;
+            width: 592px;
+            min-height: 20px;
+            border: 1px solid #fff;
+            border-radius: 50px;
+            margin-inline-start: 25px;
+            padding-inline-start: 23px;
+        }
+        
+        .chatbox {
+            width: 93%;
+            height: auto;
+            background: #8b8b8b;
+        }
+        
+        h1 {
+            margin-left: 520px;
+            margin-top: 91px;
+        }
+        
+        .chatbox__messages {
+            height: 666px;
+            overflow-x: hidden;
+            overflow-y: scroll;
+            margin-block-end: -13px;
+            background-image: url(https://image.freepik.com/free-photo/concrete-wall_1154-642.jpg);
+            background-size: cover;
+        }
+        /*  #style-4::-webkit-scrollbar-track {
+            -webkit-box-shadow: inset 0 0 6px rgb(0 0 0 / 30%);
+            background-color: rgb(0 0 0 / 8%);
+        }
+        */
+        
+        #style-4::-webkit-scrollbar {
+            width: 5px;
+            background-color: rgb(255 255 255 / 10%);
+        }
+        
+        #style-4::-webkit-scrollbar-thumb {
+            background-color: rgb(255 255 255 / 12%);
+            border: 1px solid #e4dede75;
+        }
+        /*end chat box*/
+        /*start page login*/
+        
+        .initModal {
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            background-color: -webkit-linear-gradient(330deg, #000, #f0a6ca);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            margin-block-end: 35%;
+        }
+        
+        h2 {
+            font-size: 54px;
+            margin-bottom: 117px;
+        }
+        
+        h3 {
+            font-weight: 300;
+            color: #ffffffe0;
+        }
+        
+        input.username {
+            width: 820;
+            height: 60px;
+            background-color: rgb(255 255 255 / 15%);
+            padding: 0 15px;
+            margin-top: 25px;
+            color: rgb(0, 0, 0);
+            font-size: 30px;
+        }
+        /*start button login*/
+        
+        .button2 {
+            width: 210px;
+            height: 40;
+            margin-top: 50;
+            font-weight: bolder;
+            color: #fff !important;
+            background: rgb(255 255 255 / 15%);
+            padding: 10px;
+            border-radius: 10px;
+            border: none;
+            transition: all 0.4s ease 0s;
+            padding-bottom: 35;
+            font-size: 30px;
+        }
+        
+        .button2 :hover {
+            transition: all 0.4s ease 0s;
+        }
+        /*end button login*/
+        /*start page login*/
+        /*start button send*/
+        
+        .button3 {
+            width: 67px;
+            height: 67px;
+            line-height: 72px;
+            display: block;
+            position: relative;
+            -moz-border-radius: 50%;
+            -webkit-border-radius: 50%;
+            border-radius: 50%;
+            border: 2px solid #444;
+            text-align: center;
+            display: inline-block;
+            vertical-align: middle;
+            position: relative;
+            z-index: 10;
+            color: #333;
+            float: right;
+            margin-inline-end: 276px;
+            margin-block-start: 15px;
+            padding-inline-end: 4px;
+            margin-inline-start: -8px;
+            /*  mix-blend-mode: multiply;
+            */
+            border-bottom: groove;
+            background-color: #d5d1c98f;
+        }
+        
+        .button3 img {
+            vertical-align: middle;
+            width: 61px;
+            padding: 1px;
+            /* margin: 7px; */
+            margin-inline-start: 1px;
+            margin-block-end: -1px;
+        }
+        
+        .button3:hover {
+            transition: all 0.4s ease 0s;
+            background-color: #fff;
+        }
+        /*end button send*/
+        
+        @-webkit-keyframes pulse-grow-on-hover {
+            to {
+                -webkit-transform: scale(1.1);
+                transform: scale(1.1);
+            }
+        }
+        
+        @keyframes pulse-grow-on-hover {
+            to {
+                -webkit-transform: scale(1.1);
+                transform: scale(1.1);
+            }
+        }
+        /*start switch mode button and hover all button*/
+        
+        .btn {
+            float: right;
+            /* margin: 10; */
+            margin-right: 1750px;
+            /* margin-left: -70px; */
+            /* position: fixed; */
+            margin-top: 71px;
+            width: 70px;
+            border-width: 0;
+            background-color: rgb(255 255 255 / 0%);
+            font-size: 100px;
+        }
+        /*  .btn:before {
+            content: '🌞';
+            text-align: center;
+            cursor: pointer;
+    
+        }
+        
+        .btn:hover:after {
+            content: '🌙';
+        }
+        */
+        
+        .btn-primary {
+            color: #fff;
+            background-color: rgb(0 0 0 / 8%);
+            border-color: #bfc7cf;
+        }
+        
+        .btn-primary:hover {
+            border-color: #ca9e4b;
+        }
+        
+        .switch {
+            display: inline-block;
+            position: relative;
+            width: 50px;
+            height: 25px;
+            border-radius: 20px;
+            background: #dfd9ea;
+            transition: 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+            vertical-align: middle;
+            cursor: pointer;
+        }
+        
+        .switch::before {
+            content: '';
+            position: absolute;
+            top: 1px;
+            left: 2px;
+            width: 22px;
+            height: 22px;
+            background: #fafafa;
+            border-radius: 50%;
+            transition: left 0.28s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .switch:active::before {
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.28), 0 0 0 20px rgba(128, 128, 128, 0.1);
+        }
+        
+        input:checked+.switch {
+            background: #232c21;
+        }
+        
+        input:checked+.switch::before {
+            left: 27px;
+            background: #fff;
+        }
+        
+        input:checked+.switch:active::before {
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.28), 0 0 0 20px rgba(0, 150, 136, 0.2);
+        }
+        /*end switch mode button and hover all button*/
+        
+        .nameroom {
+            padding: inherit;
+            border: inset;
+        }
+        /*start emoji chat*/
+        
+        .em {
+            width: 68.8%;
+            /* margin-left: 61%; */
+            background-color: rgb(0 0 0 / 8%);
+            display: none;
+            height: 178px;
+            overflow-x: auto;
+            font-size: 20px;
+            flex-wrap: wrap;
+            margin-top: 7px;
+            border-radius: -21%;
+            /* margin-top: 8px; */
+            /* border-radius: 5%; */
+            margin-block-end: -4%;
+            padding: 9px;
+            margin-inline-start: 13px;
+            overflow-x: hidden;
+            margin-block-end: -12px;
+        }
+        
+        .em p {
+            margin-right: -200px;
+        }
+        
+        .pulse-grow-on-hover {
+            display: inline-block;
+            vertical-align: middle;
+            -webkit-transform: perspective(1px) translateZ(0);
+            transform: perspective(1px) translateZ(0);
+            box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+        }
+        
+        .pulse-grow-on-hover:hover,
+        .pulse-grow-on-hover:focus,
+        .pulse-grow-on-hover:active {
+            animation-name: pulse-grow-on-hover;
+            animation-duration: 0.3s;
+            -webkit-animation-timing-function: linear;
+            -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            cursor: pointer;
+        }
+        /*end emoji chat*/
+        /*start emoji button*/
+        
+        .emoji {
+            font-size: 5rem;
+            transform: scale(.5);
+            text-shadow: 0 2px 4px rgba(0, 0, 0, .3);
+            transition: text-shadow .2s ease-in-out, transform .2s ease-in-out;
+        }
+        
+        .emoji:hover {
+            transform: scale(1) translatey(-20px);
+            text-shadow: 0 20px 20px rgba(0, 0, 0, .3);
+        }
+        
+        .emoji--happy:before {
+            content: '🙂';
+            float: right;
+            margin-right: 24px;
+            cursor: pointer;
+            padding-block-start: 13px;
+            opacity: 0.6;
+        }
+        
+        .emoji--happy:hover:before {
+            content: '😄';
+        }
+        
+        .em::-webkit-scrollbar-thumb {
+            background-color: rgb(255 255 255 / 12%);
+            border: 1px solid #e4dede75;
+        }
+        /*     .em::-webkit-scrollbar-track {
+            -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+            background-color: #2a0909;
+        }
+     */
+        
+        .em::-webkit-scrollbar {
+            width: 5px;
+            background-color: rgb(255 255 255 / 10%);
+        }
+        /*end emoji button*/
+    </style>
+</head>
+
+<body>
+
+    <div class='container' id="appChat">
+        <div class="text-center mb-3">
+            <a class="btn "><input type="checkbox" hidden="hidden" id="username">
+
+                <label class="switch" for="username"></label></a>
+
+        </div>
+
+
+
+        <h1 class="nameroom" v-if="showchat">{{ room == '' ? 'Chat App With Bot-web' : room}}</h1>
+
+        <form class="initModal" v-if="!showchat" @submit.prevent="logNewName()">
+            <h2>What's your name?</h2>
+            <input class="username" type="name" v-model="youname" placeholder="Nick Name">
+            <button type="submit" class="button2 btn-primary btn-theme-toggle"> Go </button>
+        </form>
+
+        <div class='chatbox' v-if="showchat">
+            <div class='chatbox__user-list'>
+                <h1 class="btn-primary btn-theme-toggle">Rooms ({{online}})</h1>
+                <div v-for="room1 in rooms" v-bind:class='room1 == room ? "chatbox__user--active" : "chatbox__user--busy"' @click="joinRoom(room1)">
+                    <p class="btn-primary btn-theme-toggle">{{room1}} </p>
+                </div>
+
+            </div>
+            <div class="chatbox__messages" id="style-4">
+                <div class="chatbox__messages__user-message " v-for="message in messages">
+                    <div class="chatbox__messages__user-message--ind-message btn-primary btn-theme-toggle">
+                        <p class="name ">{{message.name}}</p>
+                        <br/>
+                        <p class="message">{{ message.message }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="em" v-if="showchat">
+                <p v-for="ems in em" @click="messageText+=ems " class="link link-four pulse-grow-on-hover"> {{ems}}
+                </p>
+            </div>
+            <form @submit.prevent="sendMessage()">
+                <input type="text" v-model="messageText" placeholder="Type Message">
+                <button type="submit" class="button3"> <img src="https://cdn.icon-icons.com/icons2/2248/PNG/512/send_circle_icon_136236.png" >  </button>
+            </form>
+            <span class="emoji emoji--happy" type="submit" @click='showemfun()'></span>
+
+
+
+        </div>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.0.11/vue.cjs.js " integrity="sha512-rEUmaOwq8RTKLJ+i+F05YDchx4/UJ+yuM83C2RHPV8LqU6xhc03MYUE+6QQM3GGtKNCZCgHmoYKCSSgGSg92ew==" crossorigin=" anonymous "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.min.js"></script>
+    <script>
+        var scoket = io();
+        new Vue({
+            el: "#appChat",
+            data: {
+                messageText: '',
+                messages: [],
+                room: '',
+                showchat: false,
+                youname: '',
+                online: 0,
+                showem: false,
+
+                em: [
+                    '😀', '😃', '😄', '😁', '😆', '😅', '😂', '🤣', '😊', '😇', '🙂', '🙃', '😉', '😍', '🥰',
+                    '😘', '😗', '😙', '😚', '😋', '😛', '😝', '😜', '🤪', '🤨', '🧐', '🤓', '😎', '🤩', '🥳', '😏',
+                    '😒', '😞', '😔', '😟', '😕', '🙁', '☹️', '😣', '😖', '😫', '😩', '🥺', '😢', '😭', '😤', '😠',
+                    '😡', '🤬', '🤯', '😳', '🥵', '🥶', '😱', '😨', '😰', '😥', '😓', '🤗', '🤔', '🤭', '🤫', '🤥',
+                    '😶', '😐', '😑', '😬', '🙄', '😯', '😦', '😧', '😮', '😲', '🥱', '😴', '🤤', '😪', '😵', '🤐',
+                    '🥴', '🤢', '🤮', '🤧', '😷', '🤒', '🤕', '🤑', '🤠', '🖤'
+
+                ],
+                rooms: [
+                    'General', 'Manager', 'Project', 'Players', 'Games'
+                ],
+
+
+
+
+            },
+            mounted: function() {
+                //  this.joinRoom('General');
+
+                scoket.on('clientMessage', function(data) {
+                    if (data.type == 'message') {
+                        this.messages.push(data);
+                    } else if (data.type == 'online') {
+                        this.online = data.message;
+                    }
+
+
+
+
+                }.bind(this));
+            },
+            methods: {
+                sendMessage: function() {
+                    scoket.emit('newMessage', this.messageText, this.room, this.youname);
+                    let ob = {
+                        "name": this.youname,
+                        "message": this.messageText,
+
+                    }
+                    this.messages.push(ob);
+                    this.messageText = '';
+                },
+                joinRoom: function(roomName) {
+                    this.messages = [];
+                    if (this.room != '') {
+                        scoket.emit('leaveRoom', this.room, this.youname);
+                    }
+                    scoket.emit('joinRoom', roomName, this.youname);
+                    this.room = roomName;
+                },
+                logNewName: function() {
+                    if (this.youname == '') {
+                        alert("Please enter a valid name or number")
+                    } else {
+                        this.joinRoom('General');
+                        this.showchat = true;
+                    }
+                },
+                showemfun: function() {
+                    if (this.showem == false) {
+                        this.showem = true;
+                        document.getElementsByClassName('em')[0].style.display = 'none';
+                    } else {
+
+                        this.showem = false;
+                        document.getElementsByClassName('em')[0].style.display = 'flex';
+                    }
+                },
+            }
+        });
+    </script>
+
+
+    <!--           dark mode          -->
+    <script>
+        (function() {
+            'use strict'
+
+            var forms = document.querySelectorAll('.needs-validation')
+
+            Array.prototype.slice.call(forms)
+                .forEach(function(form) {
+                    form.addEventListener('submit', function(event) {
+                        if (!form.checkValidity()) {
+                            event.preventDefault()
+                            event.stopPropagation()
+                        }
+
+                        form.classList.add('was-validated')
+                    }, false)
+                })
+
+            // Toggle Theme
+            var toggleTheme = document.querySelector('.switch');
+
+            toggleTheme.addEventListener('click', function() {
+                var body = document.getElementsByTagName("BODY")[0];
+
+                if (body.classList.contains('dark')) {
+                    body.classList.remove('dark');
+                } else {
+                    body.classList.add('dark');
+                }
+            });
+        })()
+    </script>
+
+</body>
+
+</html>
