@@ -1,6 +1,5 @@
 # vue.js-chat
-## welcome to my realtime chat 
-# I am mohammed Elsheikh
+
 # Languages used and technologies
 -HTML 
 -CSS 
